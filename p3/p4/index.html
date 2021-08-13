@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"></link>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <title>Document</title>
+    <style>
+        .one{
+            color: green;
+        }
+        .two{
+            text-decoration: line-through;
+        }
+        .canvas{
+            width: 300px;
+            height: 300px;
+            margin-top: 20px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1> 
+        <p>{{ greet('afternoon') }}</p>
+        <a :href='url'>youtube</a>
+        <div :class='classes'>classes from instance</div>
+        <input type="text" :value="message">
+        <p>i earn {{wage}} per hour</p>
+        <button v-on:click='changewage(1)'>click to increase wage by 1</button>
+        <button v-on:click='changewage(-1)'>click to decrease wage by 1</button>
+        <button v-on:dblclick='changewage(5)'>click to increase wage by 5</button>
+        <button v-on:dblclick='changewage(-5)'>click to decrease wage by 5</button>
+        <button @click='logevents'>log event logo</button>
+        <div class="canvas" @mousemove="logCoords">{{ coords.x }},{{ coords.y }}</div>
+        <p> my name is {{name}} </p>
+        <input type="text" @keyup="updateName">
+        <input type="text" @keypress="updateName">
+        <h1>dynamic css</h1>
+        <h1>example 1</h1>
+        <div @click='available = !available' v-bind:class="{available: available}" >
+            <span>ashish</span>
+        </div>
+        <h2>example 2</h2>
+    
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
